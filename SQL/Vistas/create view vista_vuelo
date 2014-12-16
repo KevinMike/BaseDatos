@@ -1,0 +1,9 @@
+create view vista_vuelo
+as
+SELECT        dv.cod_vuelo, dv.nro_vuelo, dv.horario_partida, dv.horario_llegada, 'Aeropuerto ' + a.nombre_aereopuerto + ', ' + c1.nombre_ciudad AS ciudad_origen, 
+                         'Aeropuerto ' + a2.nombre_aereopuerto + ', ' + c2.nombre_ciudad AS ciudad_destino
+FROM            dbo.detalles_vuelo AS dv INNER JOIN
+                         dbo.aeropuerto AS a ON a.cod_aereopuerto = dv.cod_aeropuerto_origen INNER JOIN
+                         dbo.aeropuerto AS a2 ON a2.cod_aereopuerto = dv.cod_aeropuerto_destino INNER JOIN
+                         dbo.ciudad AS c1 ON c1.cod_ciudad = a.cod_ciudad INNER JOIN
+                         dbo.ciudad AS c2 ON c2.cod_ciudad = a2.cod_ciudad

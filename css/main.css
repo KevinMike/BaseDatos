@@ -1,0 +1,210 @@
+body
+{
+	font-family: Segoe UI Light;
+	margin: 0;
+}
+
+ caption{
+	color: black;
+}
+
+.logo{
+	margin: 20px;
+}
+
+.reserva{
+	margin: 40px;
+}
+
+.cabecera{
+	background: #278AC4;
+	width: 100%;
+	height: 160px;
+}
+
+#buscar{
+	margin: 10px 0px;
+	border-radius:  5px;
+	font-size: 20px;
+}
+
+.opciones{
+	margin: 10px;
+}
+
+.cuerpo{
+
+	padding: 15px;
+	border-radius: 15px;
+	margin: 10px;
+}
+
+.separacion{
+	margin: 0px 0px 10px 0px;
+	height: 10px;
+	background: #000000;
+}
+
+.titulo,.dato{
+	display: inline-block;
+}
+
+.formulario{
+	background: #1EC2F4;
+	width: 300px;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+th{
+	background: #27C439;
+	color: white;
+	width: 150px;
+}
+
+table,th,tr,td
+{
+	border:1px solid black;
+	border-spacing: 0;
+	text-align: center;
+}
+
+ 
+
+ 
+a{
+	font-style: none;
+}
+
+.label_pas,.dato_pas {
+	display: inline-block;
+
+
+}
+
+label
+{
+	margin-bottom: 0px;
+}
+
+.dato_pas{
+	margin: 0px 0px 0px 15px;
+}
+
+.datos_vuelo
+{ display: inline-block;
+	margin: 0px 0px 0px 15px;	
+}
+
+.datos >label
+{
+	margin-top: 20px;
+ 
+}
+
+.datos_vuelo>input{
+margin-bottom: 10px;
+width: 300px;
+margin-top: 4px;	
+}
+
+.datos{
+	display: inline-block;
+}
+.dat_pers,.foto{
+	font-weight: bolder;
+	margin: 25px;
+	font-size: 20px;
+}
+
+.cabecera{
+	margin-top:40px;
+}
+
+.buscador{
+	display: inline-block;
+	color: white;
+	width: 470px;
+	margin: 25px;
+	background: #2CC2FD;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+ .button{
+	color: black;
+}
+
+input{
+	color: black;
+}
+
+.destinos{
+	display: inline-block;
+	width: 580px;
+	margin: 0px 80px;
+	padding: 0;
+}
+
+.destinos>div>img{
+	display: inline-block;
+	width: 280px;
+	height: 200px;
+	border-radius: 5px;
+}
+
+ .cuerpo{
+ 	margin: 0 25px;
+ }
+
+ input[type=date] {
+	line-height: normal;
+}
+
+.destinos>div
+{
+	display: block;
+}
+
+h1{
+	background: none;
+}
+
+.buscar{
+	display: inline-block;
+	 
+	width: 470px;
+	margin: 25px;
+ 
+ 
+}
+
+#destinos-1,#destinos-2{
+	margin: 5px;
+}
+
+.cuerpo{
+	margin: 10px;
+}
+
+.pais,td,tr
+{color: black;
+font-weight: bolder;}
+
+.pais>td{
+	font-style: none;
+	border: none;
+}
+
+caption{
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+footer{
+	width: auto;
+	background: #000000;
+	padding: 20px;
+	text-align: center;
+	color: white;
+}
