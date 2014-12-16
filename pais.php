@@ -6,6 +6,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/starter-template.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/sticky-footer-navbar.css">
 <style type="text/css">
 	td,th,tr,table{
 		text-align: left;
@@ -25,13 +26,18 @@
 		padding: 5px;
 	}
 	#pais{
-		border: 1px solid black;
+ 
 		text-align: center;	
 	}
 	th{
 		text-align: center;
 
 	}
+
+	.footer{
+  
+    background: #000000;
+  }
 </style>
 </head>
 <body>
@@ -103,7 +109,7 @@
 					</tr>
 				</table>
 			</form>
-			<table style="color:blue" id='pais'>
+			<table class="table table-hover">
 				<caption>Lista de Alianzas Aereas</caption>
 				<tr>
 					<th>Código</th>
@@ -130,6 +136,7 @@
 			<?php echo $tabla; ?>
 			</table>
 			</div>
-			<footer>Derechos reservados</footer>
+			 
 	</body>
+	<footer class='footer'>Derechos reservados - 2014</footer>
 </html>

@@ -2,7 +2,7 @@
 
   include('scripts/conexion.php');
   include('scripts/validar.php');
-  $consulta = "SELECT * FROM ciudad_pais";
+  $consulta = "SELECT DISTINCT * FROM ciudad_pais";
   $resultado = sqlsrv_query($conexion,$consulta);
   $valores = "";
   while ($linea = sqlsrv_fetch_array($resultado,SQLSRV_FETCH_ASSOC)) 

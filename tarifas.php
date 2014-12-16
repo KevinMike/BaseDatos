@@ -52,6 +52,11 @@
 	td{
 		padding: 5px;
 	}
+
+		.footer{
+		background: #000000;
+	}
+
 </style>
 </head>
 <body>
@@ -158,16 +163,16 @@
 					</tr>	
 				</table>
 			</form>
-			<table >
+			<table class="table table-hover" >
 				<caption>Lista de Tarifas</caption>
 				<tr>
-					<th style='border: 1px solid blue;text-align:center;'>Vuelo</th>
-					<th style='border: 1px solid blue;text-align:center;'>Aerolinea</th>
-					<th style='border: 1px solid blue;text-align:center;'>Clase</th>
-					<th style='border: 1px solid blue;text-align:center;'>Persona</th>
-					<th style='border: 1px solid blue;text-align:center;'>Monto</th>
-					<th style='border: 1px solid blue;text-align:center;'>Promocion</th>
-					<th style='border: 1px solid blue;text-align:center;'>Eliminar</th>
+					<th style='text-align:center;'>Vuelo</th>
+					<th style='text-align:center;'>Aerolinea</th>
+					<th style='text-align:center;'>Clase</th>
+					<th style='text-align:center;'>Persona</th>
+					<th style='text-align:center;'>Monto</th>
+					<th style='text-align:center;'>Promocion</th>
+					<th style='text-align:center;'>Eliminar</th>
 				</tr>
 <?php 
 	include("scripts/conexion.php");
@@ -177,13 +182,13 @@
 	$tabla = "";
 	while($linea=sqlsrv_fetch_array($resultado,SQLSRV_FETCH_ASSOC)){
 				$tabla .="<tr>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['cod_vuelo']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['RUC']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['cod_clase']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['tipo_persona']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['monto']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['cod_promocion']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'><a href='scripts/eliminar_tarifa.php?RUC={$linea['RUC']}&cod_vuelo={$linea['cod_vuelo']}&cod_clase={$linea['cod_clase']}&tipo_persona={$linea['tipo_persona']}'>Eliminar</a></td>";
+				$tabla .="<td style='text-align:center;'>".$linea['cod_vuelo']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['RUC']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['cod_clase']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['tipo_persona']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['monto']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['cod_promocion']."</td>";
+				$tabla .="<td style='text-align:center;'><a href='scripts/eliminar_tarifa.php?RUC={$linea['RUC']}&cod_vuelo={$linea['cod_vuelo']}&cod_clase={$linea['cod_clase']}&tipo_persona={$linea['tipo_persona']}'>Eliminar</a></td>";
 				$tabla .="</tr>";
 		}
 ?>
@@ -191,4 +196,5 @@
 			</table>
 	</div>
 	</body>
+	<footer class='footer'>Derechos reservados - 2014</footer>
 </html>

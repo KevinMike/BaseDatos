@@ -15,6 +15,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/starter-template.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/sticky-footer-navbar.css">
 <style type="text/css">
 		td,th,tr,table{
 		text-align: left;
@@ -33,6 +34,11 @@
 	td{
 		padding: 5px;
 	}
+
+	.footer{
+  
+    background: #000000;
+  }
 </style>
 </head>
 <body>
@@ -106,13 +112,13 @@
 					</tr>
 				</table>
 			</form>
-			<table style="color:blue">
+			<table class="table table-hover">
 				<caption>Lista de Alianzas Aereas</caption>
 				<tr>
-					<th style='border: 1px solid blue;text-align:center;'>Código</th>
-					<th style='border: 1px solid blue;text-align:center;'>Nombre</th>
-					<th style='border: 1px solid blue;text-align:center;'>Pais</th>
-					<th style='border: 1px solid blue;text-align:center;'>Eliminar</th>
+					<th style='text-align:center;'>Código</th>
+					<th style='text-align:center;'>Nombre</th>
+					<th style='text-align:center;'>Pais</th>
+					<th style='text-align:center;'>Eliminar</th>
 				</tr>
 		<?php 
 			include("scripts/conexion.php");
@@ -123,16 +129,16 @@
 			$tabla = "";
 			while($linea=sqlsrv_fetch_array($resultado,SQLSRV_FETCH_ASSOC)){
 						$tabla .="<tr>";
-						$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['cod_ciudad']."</td>";
-						$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['nombre_ciudad']."</td>";
-						$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['cod_pais']."</td>";
-						$tabla .="<td style='border: 1px solid blue;text-align:center;'><a href='scripts/eliminar_ciudad.php?cod_ciudad={$linea['cod_ciudad']}'>Eliminar</a></td>";
+						$tabla .="<td style='text-align:center;'>".$linea['cod_ciudad']."</td>";
+						$tabla .="<td style='text-align:center;'>".$linea['nombre_ciudad']."</td>";
+						$tabla .="<td style='text-align:center;'>".$linea['cod_pais']."</td>";
+						$tabla .="<td style='text-align:center;'><a href='scripts/eliminar_ciudad.php?cod_ciudad={$linea['cod_ciudad']}'>Eliminar</a></td>";
 						$tabla .="</tr>";
 				}
 		?>
 			<?php echo $tabla; ?>
 			</table>
 			</div>
-			<footer>Derechos reservados</footer>
+			<footer class='footer'>Derechos reservados - 2014</footer>
 	</body>
 </html>

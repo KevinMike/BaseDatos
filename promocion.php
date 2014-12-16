@@ -5,6 +5,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/starter-template.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/sticky-footer-navbar.css">
 <style type="text/css">
 		td,th,tr,table{
 		text-align: left;
@@ -23,6 +24,11 @@
 	td{
 		padding: 5px;
 	}
+
+	.footer{
+  
+    background: #000000;
+  }
 </style>
 </head>
 <body>
@@ -102,14 +108,14 @@
 					</tr>
 				</table>
 			</form>
-			<table style="border: 1px solid blue" id="lista_alianzas">
+			<table class="table table-hover">
 				<caption>Lista de Promociones</caption>
 				<tr>
-					<th style='border: 1px solid blue;text-align:center;' >Código</th>
-					<th style='border: 1px solid blue;text-align:center;'>Nombre</th>
-					<th style='border: 1px solid blue;text-align:center;' >Descuento(%)</th>
-					<th style='border: 1px solid blue;text-align:center;'>Descripcion</th>
-					<th style='border: 1px solid blue;text-align:center;'>Eliminar</th>
+					<th style='text-align:center;' >Código</th>
+					<th style='text-align:center;'>Nombre</th>
+					<th style='text-align:center;' >Descuento(%)</th>
+					<th style='text-align:center;'>Descripcion</th>
+					<th style='text-align:center;'>Eliminar</th>
 				</tr>
 <?php 
 	include("scripts/conexion.php");
@@ -120,11 +126,11 @@
 	$tabla = "";
 	while($linea=sqlsrv_fetch_array($resultado,SQLSRV_FETCH_ASSOC)){
 				$tabla .="<tr>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['cod_promocion']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['nombre_promocion']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['porcentaje_descuento']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['descripcion']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'><a href='scripts/eliminar_promocion.php?cod_promocion={$linea['cod_promocion']}'>Eliminar</a></td>";
+				$tabla .="<td style='text-align:center;'>".$linea['cod_promocion']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['nombre_promocion']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['porcentaje_descuento']."</td>";
+				$tabla .="<td style='text-align:center;'>".$linea['descripcion']."</td>";
+				$tabla .="<td style='text-align:center;'><a href='scripts/eliminar_promocion.php?cod_promocion={$linea['cod_promocion']}'>Eliminar</a></td>";
 				$tabla .="</tr>";
 		}
 ?>
@@ -132,4 +138,5 @@
 			</table>
 		</div>
 	</body>
+	<footer class='footer'>Derechos reservados - 2014</footer>
 </html>

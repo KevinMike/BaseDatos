@@ -15,30 +15,29 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/starter-template.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/sticky-footer-navbar.css">
 <style type="text/css">
 	
-			td,th,tr,table{
-		text-align: left;
-		border: none;
-	}
+ .form-data{
+ 	border: none;
+ 	text-align: center;
+ }
+ .footer{
+  
+    background: #000000;
+  }
 
-	table{
-		margin: 10px;
-	}
+  .table{
+  	text-align: center;
+  }
 
-	.botones{
-		padding: 10px;
-		margin: 10px;
-	}
+  .table-hover{
+  	text-align: center;
+  }
 
-	td{
-		padding: 5px;
-	}
-	#lista_alianzas>tr{
-		border: 1px solid black;
-		text-align: center;	
-	}
 </style>
+
+ 
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -75,47 +74,47 @@
 	<div class="cuerpo">
 		<h1>REGISTRO DE AEROLINEAS</h1>
 			<form action="scripts/registrar_aerolinea.php" method="POST">
-				<table width=400px>
-					<tr>
-						<td>
+				<table class="form-data"   width=400px>
+					<tr class="form-data">
+						<td class="form-data">
 							<label for="ruc">RUC :</label>
 						</td>
-						<td>
+						<td class="form-data">
 							<input type="text" name="ruc" id="ruc">
 						</td>
 					</tr>
-					<tr>
-						<td>
+					<tr class="form-data">
+						<td class="form-data">
 							<label for="nombre">Nombre de la aerolinea :</label>
-						</td>
-						<td>
+						</td class="form-data">
+						<td class="form-data">
 							<input type="text" name="nombre" id="nombre">
 						</td>
 					</tr>
-					<tr>
-						<td>
+					<tr class="form-data">
+						<td class="form-data">
 							<label for="cod_alianza">Alianza Aerea : </label>
 						</td>
-						<td>
+						<td class="form-data">
 							<select id="cod_alianza" name="cod_alianza">
 								<?php echo $opciones ?>
 							</select>
 						</td>
 					</tr>
-					<tr>
-						<td>
+					<tr class="form-data">
+						<td class="form-data">
 							<input class="btn btn-primary" type="submit" value="Registrar">
 							<input class="btn btn-primary" type="reset">
 						</td>
 					</tr>	
 				</table>
 			</form>
-			<table >
+			<table class="table table-hover">
 				<caption>Lista de Aerolineas</caption>
 				<tr>
-					<th style='border: 1px solid blue;text-align:center;'>Ruc</th>
-					<th style='border: 1px solid blue;text-align:center;'>Nombre</th>
-					<th style='border: 1px solid blue;text-align:center;'>Eliminar</th>
+					<th  >Ruc</th>
+					<th  >Nombre</th>
+					<th  >Eliminar</th>
 				</tr>
 <?php 
 	include("scripts/conexion.php");
@@ -125,9 +124,9 @@
 	$tabla = "";
 	while($linea=sqlsrv_fetch_array($resultado,SQLSRV_FETCH_ASSOC)){
 				$tabla .="<tr>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['RUC']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['nombre']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'><a href='scripts/eliminar_aerolinea.php?ruc={$linea['RUC']}'>Eliminar</a></td>";
+				$tabla .="<td  >".$linea['RUC']."</td>";
+				$tabla .="<td  >".$linea['nombre']."</td>";
+				$tabla .="<td  ><a href='scripts/eliminar_aerolinea.php?ruc={$linea['RUC']}'>Eliminar</a></td>";
 				$tabla .="</tr>";
 		}
 ?>
@@ -135,4 +134,5 @@
 			</table>
 	</div>
 	</body>
+	<footer class='footer'>Derechos reservados - 2014</footer>
 </html>

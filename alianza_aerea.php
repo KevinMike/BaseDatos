@@ -6,8 +6,9 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/starter-template.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/sticky-footer-navbar.css">
 <style type="text/css">
-		td,th,tr,table{
+	td,th,tr,table{
 		text-align: left;
 		border: none;
 	}
@@ -28,7 +29,18 @@
 		border: 1px solid black;
 		text-align: center;	
 	}
+
+	.footer{
+		background: #000000;
+	}
+
+   .form-data{
+ 	border: none;
+ 	text-align: center;
+ 	}
 </style>
+
+ 
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -66,38 +78,38 @@
 	<div class="cuerpo">
 		<h1>Registros de Alianzas Aéreas</h1>
 			<form action="scripts/registrar_alianza.php" method="POST">
-				<table width=400px>
-					<tr>
-						<td>
+				<table class="form-data" width=400px>
+					<tr class="form-data">
+						<td class="form-data">
 							<label for="cod_aliaza">Código de Alianza:</label>
 						</td>
-						<td>
+						<td class="form-data">
 							<input type="text" id="identificacion" name="cod_alianza">
 						</td>
 					</tr>
-					<tr>
-						<td>
+					<tr class="form-data">
+						<td class="form-data">
 							<label for="nombre">Nombre :</label>
 						</td>
-						<td>
+						<td class="form-data">
 							<input type="text" name="nombre" id="nombre">
 						</td>
 					</tr>		
-					<tr>
-						<td>
+					<tr class="form-data">
+						<td class="form-data">
 							<input class="btn btn-primary" type="submit" value="Registrar">
 							<input class="btn btn-primary" type="reset">
 						</td>
 					</tr>
 				</table>
 			</form>
-			<table style="border: 1px solid blue" id="lista_alianzas">
+			<table  class="table table-hover">
 				<caption>Lista de Alianzas Aereas</caption>
 				<tr>
-					<th style="border: 1px solid blue;text-align:center;" >Código de la Alianza Aerea</th>
-					<th style="border: 1px solid blue;text-align:center;">Nombre de la Alianza Aerea</th>
-					<th style="border: 1px solid blue;text-align:center;">Editar Nombre</th>
-					<th style="border: 1px solid blue;text-align:center;">Eliminar</th>
+					<th  >Código de la Alianza Aerea</th>
+					<th >Nombre de la Alianza Aerea</th>
+					<th >Editar Nombre</th>
+					<th >Eliminar</th>
 				</tr>
 <?php 
 	include("scripts/conexion.php");
@@ -108,10 +120,10 @@
 	$tabla = "";
 	while($linea=sqlsrv_fetch_array($resultado,SQLSRV_FETCH_ASSOC)){
 				$tabla .="<tr>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['cod_alianza']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'>".$linea['nombre_alianza']."</td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'><a href='editaralianza.php?cod_alianza={$linea['cod_alianza']}'>Editar Nombre</a></td>";
-				$tabla .="<td style='border: 1px solid blue;text-align:center;'><a href='scripts/eliminar_alianza.php?cod_alianza={$linea['cod_alianza']}'>Eliminar</a></td>";
+				$tabla .="<td>".$linea['cod_alianza']."</td>";
+				$tabla .="<td>".$linea['nombre_alianza']."</td>";
+				$tabla .="<td><a href='editaralianza.php?cod_alianza={$linea['cod_alianza']}'>Editar Nombre</a></td>";
+				$tabla .="<td><a href='scripts/eliminar_alianza.php?cod_alianza={$linea['cod_alianza']}'>Eliminar</a></td>";
 				$tabla .="</tr>";
 		}
 ?>
@@ -119,4 +131,6 @@
 			</table>
 		</div>
 	</body>
+		<footer class='footer'>Derechos reservados - 2014</footer>
+
 </html>

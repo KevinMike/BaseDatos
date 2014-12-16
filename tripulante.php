@@ -33,6 +33,10 @@
 	td{
 		padding: 5px;
 	}
+		.footer{
+		background: #000000;
+	}
+
 </style>
 </head>
 <body>
@@ -158,4 +162,5 @@
 			</form>
 	</div>
 	</body>
+
 </html>
